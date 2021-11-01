@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidDoAn/app/src/main/res/layout/activity_dang_ky.xml" value="0.245018115942029" />
+        <entry key="..\:/AndroidDoAn/app/src/main/res/layout/activity_dang_nhap.xml" value="0.1793478260869565" />
+        <entry key="..\:/AndroidDoAn/app/src/main/res/layout/activity_otp.xml" value="0.245018115942029" />
         <entry key="..\:/ThucHanh/AndroidDoAn/app/src/main/res/layout/activity_otp.xml" value="0.1793478260869565" />
       </map>
     </option>
