@@ -21,7 +21,9 @@
             <ImageButton
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/monbac">
+                android:src="@drawable/monbac"
+                android:id="@+id/monBac"
+                android:onClick="clickBac">
 
             </ImageButton>
 
@@ -46,7 +48,9 @@
             <ImageButton
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/montrung">
+                android:src="@drawable/montrung"
+                android:id="@+id/monTrung"
+                android:onClick="clickTrung">
 
             </ImageButton>
 
@@ -80,7 +84,9 @@
             <ImageButton
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/montay">
+                android:src="@drawable/montay"
+                android:id="@+id/monTay"
+                android:onClick="clickTay">
 
             </ImageButton>
 
@@ -105,7 +111,9 @@
             <ImageButton
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/monnam">
+                android:src="@drawable/monnam"
+                android:id="@+id/monNam"
+                android:onClick="clickNam">
 
             </ImageButton>
 
