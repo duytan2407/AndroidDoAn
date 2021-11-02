@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ThucDon"
+    android:background="@drawable/hinhnen">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+        <FrameLayout
+            android:layout_width="110dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="250dp">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/monbac">
+
+            </ImageButton>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="25dp"
+                android:fontFamily="@font/bungee"
+                android:text="Món Bắc"
+                android:textColor="@color/white"
+                android:textSize="13dp">
+
+            </TextView>
+
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="110dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="250dp">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/montrung">
+
+            </ImageButton>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/bungee"
+                android:text="Món Trung"
+                android:textColor="@color/white"
+                android:textSize="13dp">
+
+            </TextView>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        >
+        <FrameLayout
+            android:layout_width="110dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="10dp">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/montay">
+
+            </ImageButton>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="25dp"
+                android:fontFamily="@font/bungee"
+                android:textSize="13dp"
+                android:text="Món Tây"
+                android:textColor="@color/blue">
+
+            </TextView>
+
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="110dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="10dp">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/monnam">
+
+            </ImageButton>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/bungee"
+                android:textSize="13dp"
+                android:text="Món Nam"
+                android:textColor="@color/blue">
+
+            </TextView>
+
+        </FrameLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        >
+        <FrameLayout
+            android:layout_width="110dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="10dp">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/monkhac">
+
+            </ImageButton>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="25dp"
+                android:fontFamily="@font/bungee"
+                android:text="Món Khác"
+                android:textColor="@color/red"
+                android:textSize="13dp">
+
+            </TextView>
+
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="110dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="10dp">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/nuoc">
+
+            </ImageButton>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/bungee"
+                android:textSize="13dp"
+                android:text="Đồ Uống"
+                android:textColor="@color/red">
+
+            </TextView>
+
+        </FrameLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>
