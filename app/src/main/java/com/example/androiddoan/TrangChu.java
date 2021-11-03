@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.WindowManager;
 import android.widget.TextView;
 
+import com.example.androiddoan.Api.Model.NguoiDungModel;
+
 public class TrangChu extends AppCompatActivity {
 
     @Override
@@ -16,6 +18,16 @@ public class TrangChu extends AppCompatActivity {
         getSupportActionBar().hide();
         setTitleToolbar();
         getDataIntent();
+
+        Bundle bundleReceive = getIntent().getExtras();
+        if(bundleReceive !=null)
+        {
+            NguoiDungModel user = (NguoiDungModel) bundleReceive.get("Object User");
+            if( user != null)
+            {
+
+            }
+        }
     }
     private void getDataIntent()
     {
