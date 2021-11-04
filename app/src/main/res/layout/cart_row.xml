@@ -36,6 +36,9 @@
             app:layout_constraintBottom_toTopOf="@+id/textView"
             app:layout_constraintStart_toEndOf="@+id/productImageView"
             app:layout_constraintTop_toTopOf="parent"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:fontFamily="@font/bungee"
             android:text="@{cartItem.product.tenMonAn}"/>
 
 
@@ -43,9 +46,11 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Qty"
+            android:text="SL"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
             app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_weight="1"
+            android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="@+id/productNameTextView"
             app:layout_constraintTop_toBottomOf="@+id/productNameTextView"
             />
@@ -87,6 +92,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:layout_weight="1"
+            android:textColor="@color/black"
             android:text="@{cartItem.product.gia}"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"/>
 <!--        android:text="@{String.valueOf(cartItem.product.price * cartItem.quantity)}" />-->

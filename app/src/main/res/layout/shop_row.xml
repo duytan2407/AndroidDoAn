@@ -43,24 +43,29 @@
                     android:id="@+id/productNameTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/bungee"
+                    android:layout_marginLeft="15dp"
                     android:text="@{product.tenMonAn}" />
 
                 <TextView
                     android:id="@+id/productPriceTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:textColor="@color/black"
                     android:text="@{product.gia}" />
 
                 <Button
                     android:id="@+id/addToCartButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="bottom"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
                     android:onClick="@{() -> shopInterface.addItem(product)}"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                    style="@style/Widget.MaterialComponents.Button.TextButton"
-                    android:text="Mua" />
+                    android:text="Quấtt" />
             </LinearLayout>
 
         </LinearLayout>
