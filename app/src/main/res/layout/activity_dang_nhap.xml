@@ -31,7 +31,7 @@
         tools:textSize="34sp" />
 
     <EditText
-        android:id="@+id/edDangNhap"
+        android:id="@+id/edtGMail"
         android:layout_width="320dp"
         android:layout_height="50dp"
         android:layout_marginStart="30dp"
@@ -50,7 +50,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <EditText
-        android:id="@+id/edMatKhau"
+        android:id="@+id/edtMatKhau"
         android:layout_width="320dp"
         android:layout_height="50dp"
         android:layout_marginStart="30dp"
@@ -66,10 +66,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edDangNhap" />
+        app:layout_constraintTop_toBottomOf="@+id/edtGMail" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnLogin"
         android:layout_width="320dp"
         android:layout_height="50dp"
         android:text="Đăng Nhập"
@@ -79,7 +79,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnresgister"
         android:layout_width="153dp"
         android:layout_height="55dp"
         android:text="Đăng Ký"
@@ -91,7 +91,7 @@
         app:layout_constraintVertical_bias="0.59" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/txtquenmatkhau"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -99,7 +99,7 @@
         android:text="Quên Mật Khẩu ?"
         android:textColor="#FFEB3B"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintEnd_toStartOf="@+id/btnresgister"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
