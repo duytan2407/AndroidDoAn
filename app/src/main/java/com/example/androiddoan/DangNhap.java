@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.androiddoan.Api.ApiClient;
 import com.example.androiddoan.Api.Model.NguoiDungModel;
+import com.example.androiddoan.Utils.HashMD5;
 import com.example.lib.*;
 
 import java.security.MessageDigest;
@@ -61,29 +62,12 @@ public class DangNhap extends AppCompatActivity {
         });
 
     }
-    public String getMD5 (String md5)
-    {
-        try {
-            MessageDigest md = MessageDigest.getInstance("MD5");
-            byte[] array = md.digest(md5.getBytes());
 
-            StringBuffer sb = new StringBuffer();
-            for(int i =0 ; i< array.length;i++)
-            {
-                sb.append(Integer.toHexString((array[i] & 0xFF)| 0x100).substring(1,3));
-            }
-            return sb.toString();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return  null;
-    }
     private void clickLogin() {
         String mail = edtMail.getText().toString().trim();
-//        String Password = edtPassword.getText().toString().trim();
-        String Password = getMD5(new String (edtPassword.getText().toString().trim()));
 
+//        String Password = edtPassword.getText().toString().trim();
+        String Password = HashMD5.MD5(edtPassword.getText().toString().trim());
 
         if(mail.isEmpty())
         {
@@ -111,12 +95,7 @@ public class DangNhap extends AppCompatActivity {
             edtPassword.requestFocus();
             return;
         }
-        if(Password.length()>30)
-        {
-            edtPassword.setError("Mat Khau Qua Dai");
-            edtPassword.requestFocus();
-            return;
-        }
+
         else
         {
             doLogin(mail,Password);
@@ -163,7 +142,7 @@ public class DangNhap extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<List<NguoiDungModel>> call, Throwable t) {
-                        Toast.makeText(DangNhap.this, "That bai", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(DangNhap.this, "Dang Nhap That Bai", Toast.LENGTH_SHORT).show();
                     }
                 });
     }

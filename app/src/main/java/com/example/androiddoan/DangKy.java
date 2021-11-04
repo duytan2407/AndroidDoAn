@@ -18,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.androiddoan.Api.ApiClient;
 
 import com.example.androiddoan.Api.Model.User;
+import com.example.androiddoan.Utils.HashMD5;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
@@ -30,6 +31,7 @@ import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
@@ -41,7 +43,7 @@ import android.text.TextUtils;
 
 
 public class DangKy extends AppCompatActivity {
-    private EditText edtName , edtEmail , edtpass , edtsdt , edtdiachi ;
+    private EditText edtName , edtEmail , edtpass , edtsdt , edtdiachi ,edtpassagain;
     private Button btnRegister;
     private FirebaseAuth mAuth;
 
@@ -64,7 +66,7 @@ public class DangKy extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 OnClickRegister();
-                insert();
+//                insert();
                 String strPhoneNumber = edtsdt.getText().toString().trim();
                 onClickVerifyPhoneNumber(strPhoneNumber);
             }
@@ -73,27 +75,12 @@ public class DangKy extends AppCompatActivity {
         });
     }
 
-    public String getMD5 (String md5)
-    {
-        try {
-            MessageDigest md = MessageDigest.getInstance("MD5");
-            byte[] array = md.digest(md5.getBytes());
 
-            StringBuffer sb = new StringBuffer();
-            for(int i =0 ; i< array.length;i++)
-            {
-                sb.append(Integer.toHexString((array[i] & 0xFF)| 0x100).substring(1,3));
-            }
-            return sb.toString();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return  null;
-    }
     private void OnClickRegister() {
         String name = edtName.getText().toString().trim();
-        String pass = getMD5(edtpass.getText().toString().trim());
+        String pass = HashMD5.MD5(edtpass.getText().toString().trim());
+
+
         String email = edtEmail.getText().toString().trim();
         String diachi = edtdiachi.getText().toString().trim();
         String strPhoneNumber = edtsdt.getText().toString().trim();
@@ -166,40 +153,42 @@ public class DangKy extends AppCompatActivity {
         }
     }
 
+
+
     private void doRegister(String name, String pass, String strPhoneNumber, String email, String diachi) {
-        User user = new User(name , pass , strPhoneNumber , email , diachi ,"");
+        User user = new User("",email,pass,strPhoneNumber,diachi,name);
         ApiClient.apiclient.getregister(user).enqueue(new Callback<List<User>>() {
             @Override
             public void onResponse(Call<List<User>> call, Response<List<User>> response) {
-                Toast.makeText(DangKy.this, "Them Thanh Cong", Toast.LENGTH_SHORT).show();
+                Toast.makeText(DangKy.this, "Dang Ky Thanh Cong", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onFailure(Call<List<User>> call, Throwable t) {
-                Toast.makeText(DangKy.this, "Khong Thanh Cong", Toast.LENGTH_SHORT).show();
+                Toast.makeText(DangKy.this, "Thanh Cong", Toast.LENGTH_SHORT).show();
 
             }
         });
 
     }
 
-
-    private void insert()
-    {
-        User user = new User(edtName.getText().toString(),edtEmail.getText().toString(),edtpass.getText().toString(),edtsdt.getText().toString(),edtdiachi.getText().toString(),"");
-        ApiClient.apiclient.getregister(user).enqueue(new Callback<List<User>>() {
-            @Override
-            public void onResponse(Call<List<User>> call, Response<List<User>> response) {
-                Toast.makeText(DangKy.this, "Them Thanh Cong", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onFailure(Call<List<User>> call, Throwable t) {
-                Toast.makeText(DangKy.this, "Khong Thanh Cong", Toast.LENGTH_SHORT).show();
-
-            }
-        });
-    }
+//
+//    private void insert()
+//    {
+//        User user = new User(edtName.getText().toString(),edtEmail.getText().toString(),edtpass.getText().toString(),edtsdt.getText().toString(),edtdiachi.getText().toString(),"");
+//        ApiClient.apiclient.getregister(user).enqueue(new Callback<List<User>>() {
+//            @Override
+//            public void onResponse(Call<List<User>> call, Response<List<User>> response) {
+//                Toast.makeText(DangKy.this, "Them Thanh Cong", Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onFailure(Call<List<User>> call, Throwable t) {
+//                Toast.makeText(DangKy.this, "Khong Thanh Cong", Toast.LENGTH_SHORT).show();
+//
+//            }
+//        });
+//    }
     private void setTitleToolbar(){
         if(getSupportActionBar() != null)
         {

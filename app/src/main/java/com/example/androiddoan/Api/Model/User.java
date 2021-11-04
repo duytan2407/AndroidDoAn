@@ -1,32 +1,13 @@
 package com.example.androiddoan.Api.Model;
 
-public class User {
-
-
-
-    private String HoTen;
-    private String Email;
-    private String password;
-    private String SĐT;
-    private String DiaChi;
-    private String Vaitro;
-
-
-    public User(String hoTen, String email, String password, String SĐT, String diaChi, String vaitro) {
-        HoTen = hoTen;
-        Email = email;
-        this.password = password;
-        this.SĐT = SĐT;
-        DiaChi = diaChi;
-        Vaitro = vaitro;
+public class User
+{
+    public String getId() {
+        return id;
     }
 
-    public String getHoTen() {
-        return HoTen;
-    }
-
-    public void setHoTen(String hoTen) {
-        HoTen = hoTen;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getEmail() {
@@ -61,23 +42,41 @@ public class User {
         DiaChi = diaChi;
     }
 
-    public String getVaitro() {
-        return Vaitro;
+    public String getHoTen() {
+        return HoTen;
     }
 
-    public void setVaitro(String vaitro) {
-        Vaitro = vaitro;
+    public void setHoTen(String hoTen) {
+        HoTen = hoTen;
+    }
+
+    public User(String id, String email, String password, String SĐT, String diaChi, String hoTen) {
+        this.id = id;
+        Email = email;
+        this.password = password;
+        this.SĐT = SĐT;
+        DiaChi = diaChi;
+        HoTen = hoTen;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "HoTen='" + HoTen + '\'' +
+                "id='" + id + '\'' +
                 ", Email='" + Email + '\'' +
                 ", password='" + password + '\'' +
                 ", SĐT='" + SĐT + '\'' +
                 ", DiaChi='" + DiaChi + '\'' +
-                ", Vaitro='" + Vaitro + '\'' +
+                ", HoTen='" + HoTen + '\'' +
                 '}';
     }
+
+    private String id;
+    private String Email;
+    private String password;
+    private String SĐT;
+    private String DiaChi;
+    private String HoTen;
+
+
 }
