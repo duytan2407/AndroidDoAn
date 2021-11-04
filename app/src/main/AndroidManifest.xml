@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidDoAn">
         <activity
-            android:name=".MainActivity"
-            android:exported="true" />
-        <activity
             android:name=".DonHang"
             android:exported="true" />
         <activity
@@ -46,7 +43,7 @@
             android:name=".DangNhap"
             android:exported="true" />
         <activity
-            android:name=".TestOTp"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
