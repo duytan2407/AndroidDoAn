@@ -12,9 +12,7 @@ import com.example.androiddoan.Adapter.MonAnAdapter;
 import com.example.lib.InterfaceRepository.Methods;
 import com.example.lib.Model.MonAnModel;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -23,6 +21,7 @@ import retrofit2.Response;
 public class MonAn extends AppCompatActivity {
     ListView listView;
     MonAnAdapter monanAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,9 +36,9 @@ public class MonAn extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<MonAnModel>> call, Response<List<MonAnModel>> response) {
                 List<MonAnModel> data = response.body();
-                monanAdapter = new MonAnAdapter(MonAn.this,R.layout.layout_list_monan);
+                monanAdapter = new MonAnAdapter(MonAn.this, R.layout.layout_list_monan);
                 listView = findViewById(R.id.Danhsach);
-                for(MonAnModel dt : data){
+                for (MonAnModel dt : data) {
 //                    Log.v("log:", dt.getTenMonAn());
                     monanAdapter.add(dt);
                 }
@@ -55,11 +54,11 @@ public class MonAn extends AppCompatActivity {
 //                    }
 //                });
             }
+
             @Override
             public void onFailure(Call<List<MonAnModel>> call, Throwable t) {
                 Log.v("log:", t.getMessage());
             }
         });
-
     }
 }
