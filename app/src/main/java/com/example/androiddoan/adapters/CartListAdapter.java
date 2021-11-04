@@ -47,6 +47,7 @@ public class CartListAdapter extends ListAdapter<CartItem, CartListAdapter.CartV
     }
     public interface CartInterface{
         void deleteItem(CartItem cartItem);
+//        void changeQuantity(CartItem cartItem, int quantity);
     }
 
 }

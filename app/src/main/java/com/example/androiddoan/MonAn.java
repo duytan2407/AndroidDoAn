@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 
 
 import com.example.androiddoan.models.CartItem;
@@ -45,13 +46,13 @@ public class MonAn extends AppCompatActivity {
         shopViewModel.getCart().observe(this, new Observer<List<CartItem>>() {
             @Override
             public void onChanged(List<CartItem> cartItems) {
-                Log.d(TAG, "onChanged: " + cartItems.size());
-//                int quantity = 0;
-//                for (CartItem cartItem : cartItems){
-//                    quantity += cartItem.getQuantity();
-//                }
-//                cartQuantity = quantity;
-//                invalidateOptionsMenu();
+//                Log.d(TAG, "onChanged: " + cartItems.size());
+                int quantity = 0;
+                for (CartItem cartItem : cartItems){
+                    quantity += cartItem.getQuantity();
+                }
+                cartQuantity = quantity;
+                invalidateOptionsMenu();
             }
         });
     }
@@ -66,10 +67,18 @@ public class MonAn extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
 
-        final MenuItem menuItem = menu.findItem(R.id.cartFragment);
+        MenuItem menuItem = menu.findItem(R.id.cartFragment);
         View actionView = menuItem.getActionView();
 
-
+//        TextView cartBadgeTextView = actionView.findViewById(R.id.cart_badge_text_view);
+//        cartBadgeTextView.setText("2");
+//        cartBadgeTextView.setText(String.valueOf(cartQuantity));
+//        actionView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                onOptionsItemSelected(menuItem);
+//            }
+//        });
         return true;
     }
 

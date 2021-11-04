@@ -15,8 +15,6 @@ import retrofit2.http.Path;
 public interface Methods {
     @GET("MonAn")
     Call<List<Product>> loadProduct();
-    @GET("MonAn")
-    Call<List<Product>> getClassModel();
     @POST("MonAn")
     Call<Product> insertClass(@Body Product product);
     @PUT("MonAn/{id}")
