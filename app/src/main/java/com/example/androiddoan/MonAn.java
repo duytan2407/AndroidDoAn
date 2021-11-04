@@ -1,16 +1,27 @@
 package com.example.androiddoan;
 
-import static com.example.lib.RetrofitClient.getRetrofit;
+import static com.example.androiddoan.RetrofitClient.getRetrofit;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.ListView;
 
-import com.example.androiddoan.Adapter.MonAnAdapter;
-import com.example.lib.InterfaceRepository.Methods;
-import com.example.lib.Model.MonAnModel;
+
+import com.example.androiddoan.models.CartItem;
+import com.example.androiddoan.viewmodels.ShopViewModel;
+import com.example.androiddoan.InterfaceRepository.Methods;
+
 
 import java.util.List;
 
@@ -19,46 +30,51 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MonAn extends AppCompatActivity {
-    ListView listView;
-    MonAnAdapter monanAdapter;
+    NavController navController;
+    ShopViewModel shopViewModel;
+    private int cartQuantity = 0;
+    private static final String TAG = "MonAn";
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mon_an);
-        getMonAn();
-    }
-
-    private void getMonAn() {
-        Methods methods = getRetrofit().create(Methods.class);
-        Call<List<MonAnModel>> call = methods.getMonAn("MB");
-        call.enqueue(new Callback<List<MonAnModel>>() {
+        navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        NavigationUI.setupActionBarWithNavController(this, navController);
+        shopViewModel = new ViewModelProvider(this).get(ShopViewModel.class);
+        shopViewModel.getCart().observe(this, new Observer<List<CartItem>>() {
             @Override
-            public void onResponse(Call<List<MonAnModel>> call, Response<List<MonAnModel>> response) {
-                List<MonAnModel> data = response.body();
-                monanAdapter = new MonAnAdapter(MonAn.this, R.layout.layout_list_monan);
-                listView = findViewById(R.id.Danhsach);
-                for (MonAnModel dt : data) {
-//                    Log.v("log:", dt.getTenMonAn());
-                    monanAdapter.add(dt);
-                }
-                listView.setAdapter(monanAdapter);
-//                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//                    @Override
-//                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                        ClassModel classModelD = (ClassModel)classAdapter.getItem(position);
-//                        Intent intent = new Intent(MainActivity.this, DetailActivity.class);
-//                        intent.putExtra("class", classModelD);
-////                        Log.v("log:", classModelD.getTenMonAn());
-//                        startActivity(intent);
-//                    }
-//                });
-            }
-
-            @Override
-            public void onFailure(Call<List<MonAnModel>> call, Throwable t) {
-                Log.v("log:", t.getMessage());
+            public void onChanged(List<CartItem> cartItems) {
+                Log.d(TAG, "onChanged: " + cartItems.size());
+//                int quantity = 0;
+//                for (CartItem cartItem : cartItems){
+//                    quantity += cartItem.getQuantity();
+//                }
+//                cartQuantity = quantity;
+//                invalidateOptionsMenu();
             }
         });
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        navController.navigateUp();
+        return super.onSupportNavigateUp();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+
+        final MenuItem menuItem = menu.findItem(R.id.cartFragment);
+        View actionView = menuItem.getActionView();
+
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        return NavigationUI.onNavDestinationSelected(item, navController) || super.onOptionsItemSelected(item);
     }
 }

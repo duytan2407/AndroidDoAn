@@ -1,9 +1,16 @@
-package com.example.lib.Model;
+package com.example.androiddoan.models;
+
+import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
+import androidx.databinding.BindingAdapter;
+import androidx.recyclerview.widget.DiffUtil;
+
+import com.bumptech.glide.Glide;
 
 import java.io.Serializable;
 
-public class MonAnModel implements Serializable
-{
+public class Product implements Serializable {
     private String id;
     private String idmien;
     private String TenMonAn;
@@ -12,10 +19,10 @@ public class MonAnModel implements Serializable
     private String HinhAnh;
     private String TTChiTiet;
 
-    public MonAnModel() {
+    public Product() {
     }
 
-    public MonAnModel(String id, String idmien, String tenMonAn, String gia, String soLuong, String hinhAnh, String TTChiTiet) {
+    public Product(String id, String idmien, String tenMonAn, String gia, String soLuong, String hinhAnh, String TTChiTiet) {
         this.id = id;
         this.idmien = idmien;
         this.TenMonAn = tenMonAn;
@@ -94,4 +101,31 @@ public class MonAnModel implements Serializable
     {
         return "ClassPojo [idmien = "+idmien+", TenMonAn = "+TenMonAn+", SoLuong = "+SoLuong+", TTChiTiet = "+TTChiTiet+", id = "+id+", HinhAnh = "+HinhAnh+", Gia = "+Gia+"]";
     }
+    @BindingAdapter("android:productImage")
+    public static  void loadImage(ImageView imageView, String imageURL ){
+        Glide.with(imageView)
+                .load(imageURL)
+                .fitCenter()
+                .into(imageView);
+
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return getId().equals(product.getId()) && getTenMonAn().equals(product.getTenMonAn());
+    }
+
+    public static DiffUtil.ItemCallback<Product> itemCallback = new DiffUtil.ItemCallback<Product>() {
+        @Override
+        public boolean areItemsTheSame(@NonNull Product oldItem, @NonNull Product newItem) {
+            return oldItem.getId().equals(newItem.getId());
+        }
+
+        @Override
+        public boolean areContentsTheSame(@NonNull Product oldItem, @NonNull Product newItem) {
+            return oldItem.equals(newItem);
+        }
+    };
 }

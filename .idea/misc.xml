@@ -7,20 +7,22 @@
         <entry key="..\:/AndroidDoAn/app/src/main/res/layout/activity_dang_nhap.xml" value="0.1793478260869565" />
         <entry key="..\:/AndroidDoAn/app/src/main/res/layout/activity_otp.xml" value="0.245018115942029" />
         <entry key="..\:/AndroidDoAn/app/src/main/res/layout/activity_trang_chu.xml" value="0.245018115942029" />
-        <entry key="..\:/Download/Android/AndroidDoAn/app/src/main/res/drawable/badge_shape.xml" value="0.1" />
-        <entry key="..\:/Download/Android/AndroidDoAn/app/src/main/res/drawable/headerdesign.xml" value="0.1" />
-        <entry key="..\:/Download/Android/AndroidDoAn/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
-        <entry key="..\:/Download/Android/AndroidDoAn/app/src/main/res/layout/activity_don_hang.xml" value="0.12407407407407407" />
-        <entry key="..\:/Download/Android/AndroidDoAn/app/src/main/res/layout/activity_mon_an.xml" value="0.1" />
-        <entry key="..\:/Download/Android/AndroidDoAn/app/src/main/res/layout/activity_thuc_don.xml" value="0.33" />
-        <entry key="..\:/Download/Android/AndroidDoAn/app/src/main/res/layout/activity_trang_chu.xml" value="0.1" />
-        <entry key="..\:/Download/Android/AndroidDoAn/app/src/main/res/layout/fragment_detail_monan.xml" value="0.1" />
-        <entry key="..\:/Download/Android/AndroidDoAn/app/src/main/res/layout/fragment_gio_hang.xml" value="0.1" />
-        <entry key="..\:/Download/Android/AndroidDoAn/app/src/main/res/layout/fragment_list.xml" value="0.1" />
-        <entry key="..\:/Download/Android/AndroidDoAn/app/src/main/res/layout/fragment_list_monan.xml" value="0.1" />
-        <entry key="..\:/Download/Android/AndroidDoAn/app/src/main/res/layout/fragment_mon_an.xml" value="0.5" />
-        <entry key="..\:/Download/Android/AndroidDoAn/app/src/main/res/layout/header_lay.xml" value="0.25" />
-        <entry key="..\:/Download/Android/AndroidDoAn/app/src/main/res/layout/layout_list_monan.xml" value="0.1" />
+        <entry key="..\:/Download/Android/AndroidDoAn/app/src/main/res/drawable-v24/badge_shape.xml" value="0.1" />
+        <entry key="..\:/Download/Android/AndroidDoAn/app/src/main/res/layout/activity_mon_an.xml" value="0.10555555555555556" />
+        <entry key="..\:/Download/Android/AndroidDoAn/app/src/main/res/layout/activity_quan_ly.xml" value="0.10555555555555556" />
+        <entry key="..\:/Download/Android/AndroidDoAn/app/src/main/res/layout/activity_thuc_don.xml" value="0.10555555555555556" />
+        <entry key="..\:/Download/Android/AndroidDoAn/app/src/main/res/layout/activity_trang_chu.xml" value="0.10555555555555556" />
+        <entry key="..\:/Download/Android/AndroidDoAn/app/src/main/res/layout/cart_action_item.xml" value="0.14184397163120568" />
+        <entry key="..\:/Download/Android/AndroidDoAn/app/src/main/res/layout/cart_row.xml" value="0.14184397163120568" />
+        <entry key="..\:/Download/Android/AndroidDoAn/app/src/main/res/layout/food_item.xml" value="0.33" />
+        <entry key="..\:/Download/Android/AndroidDoAn/app/src/main/res/layout/fragment_cart.xml" value="0.14184397163120568" />
+        <entry key="..\:/Download/Android/AndroidDoAn/app/src/main/res/layout/fragment_detail.xml" value="0.14184397163120568" />
+        <entry key="..\:/Download/Android/AndroidDoAn/app/src/main/res/layout/fragment_order.xml" value="0.14184397163120568" />
+        <entry key="..\:/Download/Android/AndroidDoAn/app/src/main/res/layout/fragment_shop.xml" value="0.14184397163120568" />
+        <entry key="..\:/Download/Android/AndroidDoAn/app/src/main/res/layout/layout_list_monan.xml" value="0.10555555555555556" />
+        <entry key="..\:/Download/Android/AndroidDoAn/app/src/main/res/layout/shop_row.xml" value="0.18" />
+        <entry key="..\:/Download/Android/AndroidDoAn/app/src/main/res/menu/bottommenu.xml" value="0.25" />
+        <entry key="..\:/Download/Android/AndroidDoAn/app/src/main/res/menu/main_menu.xml" value="0.10555555555555556" />
         <entry key="..\:/ThucHanh/AndroidDoAn/app/src/main/res/layout/activity_otp.xml" value="0.1793478260869565" />
       </map>
     </option>
