@@ -61,14 +61,13 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
+            android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="@+id/textView"
             app:layout_constraintStart_toEndOf="@+id/textView"
             app:layout_constraintTop_toTopOf="@+id/textView"
             android:entries="@array/quantity_string_array"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
             android:setVal="@{cartItem.quantity}"/>
-
-
 
         <ImageButton
             android:id="@+id/deleteProductButton"
@@ -84,19 +83,32 @@
             app:srcCompat="@drawable/ic_baseline_delete_24" />
 
         <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            app:layout_constraintStart_toEndOf="@+id/deleteProductButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/productTotalPriceTextView"
+            android:text="Giá:"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
+        <TextView
             android:id="@+id/productTotalPriceTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginRight="12dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView2"
             android:layout_weight="1"
             android:textColor="@color/black"
-            android:text="@{cartItem.product.gia}"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"/>
-<!--        android:text="@{String.valueOf(cartItem.product.price * cartItem.quantity)}" />-->
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:text="@{'$' + String.valueOf(cartItem.product.gia * cartItem.quantity)}" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

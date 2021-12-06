@@ -40,4 +40,7 @@ public class ShopViewModel extends ViewModel {
     public void resetCart(){
         cartRepo.initCart();
     }
+    public void changeQuantity(CartItem cartItem, int quantity){
+        cartRepo.changeQuantity(cartItem, quantity);
+    }
 }

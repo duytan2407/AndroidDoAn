@@ -70,15 +70,16 @@ public class MonAn extends AppCompatActivity {
         MenuItem menuItem = menu.findItem(R.id.cartFragment);
         View actionView = menuItem.getActionView();
 
-//        TextView cartBadgeTextView = actionView.findViewById(R.id.cart_badge_text_view);
+        TextView cartBadgeTextView = actionView.findViewById(R.id.cart_badge_text_view);
 //        cartBadgeTextView.setText("2");
-//        cartBadgeTextView.setText(String.valueOf(cartQuantity));
-//        actionView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                onOptionsItemSelected(menuItem);
-//            }
-//        });
+        cartBadgeTextView.setText(String.valueOf(cartQuantity));
+        cartBadgeTextView.setVisibility(cartQuantity == 0 ? View.GONE : View.VISIBLE);
+        actionView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onOptionsItemSelected(menuItem);
+            }
+        });
         return true;
     }
 

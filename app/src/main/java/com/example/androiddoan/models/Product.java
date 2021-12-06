@@ -14,20 +14,20 @@ public class Product implements Serializable {
     private String id;
     private String idmien;
     private String TenMonAn;
-    private String Gia;
-    private String SoLuong;
+    private Integer Gia;
+//    private int SoLuong;
     private String HinhAnh;
     private String TTChiTiet;
 
     public Product() {
     }
 
-    public Product(String id, String idmien, String tenMonAn, String gia, String soLuong, String hinhAnh, String TTChiTiet) {
+    public Product(String id, String idmien, String tenMonAn, Integer gia, /*int soLuong,*/ String hinhAnh, String TTChiTiet) {
         this.id = id;
         this.idmien = idmien;
         this.TenMonAn = tenMonAn;
         this.Gia = gia;
-        this.SoLuong = soLuong;
+//        this.SoLuong = soLuong;
         this.HinhAnh = hinhAnh;
         this.TTChiTiet = TTChiTiet;
     }
@@ -52,15 +52,15 @@ public class Product implements Serializable {
         this.TenMonAn = TenMonAn;
     }
 
-    public String getSoLuong ()
-    {
-        return SoLuong;
-    }
-
-    public void setSoLuong (String SoLuong)
-    {
-        this.SoLuong = SoLuong;
-    }
+//    public int getSoLuong ()
+//    {
+//        return SoLuong;
+//    }
+//
+//    public void setSoLuong (int SoLuong)
+//    {
+//        this.SoLuong = SoLuong;
+//    }
 
     public String getTTChiTiet ()
     {
@@ -89,9 +89,9 @@ public class Product implements Serializable {
 
     public void setHinhAnh (String HinhAnh) { this.HinhAnh = HinhAnh; }
 
-    public String getGia () { return Gia; }
+    public Integer getGia () { return Gia; }
 
-    public void setGia (String Gia)
+    public void setGia (Integer Gia)
     {
         this.Gia = Gia;
     }
@@ -99,7 +99,7 @@ public class Product implements Serializable {
     @Override
     public String toString()
     {
-        return "ClassPojo [idmien = "+idmien+", TenMonAn = "+TenMonAn+", SoLuong = "+SoLuong+", TTChiTiet = "+TTChiTiet+", id = "+id+", HinhAnh = "+HinhAnh+", Gia = "+Gia+"]";
+        return "ClassPojo [idmien = "+idmien+", TenMonAn = "+TenMonAn+", TTChiTiet = "+TTChiTiet+", id = "+id+", HinhAnh = "+HinhAnh+", Gia = "+Gia+"]";
     }
     @BindingAdapter("android:productImage")
     public static  void loadImage(ImageView imageView, String imageURL ){
@@ -107,7 +107,6 @@ public class Product implements Serializable {
                 .load(imageURL)
                 .fitCenter()
                 .into(imageView);
-
     }
     @Override
     public boolean equals(Object o) {

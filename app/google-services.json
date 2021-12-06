@@ -1,41 +1,41 @@
 {
   "project_info": {
-    "project_number": "1089683519980",
-    "project_id": "otpsms-4163f",
-    "storage_bucket": "otpsms-4163f.appspot.com"
+    "project_number": "731351694960",
+    "project_id": "concac-fef04",
+    "storage_bucket": "concac-fef04.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1089683519980:android:d1bf2bebe7a9f527dca8c9",
+        "mobilesdk_app_id": "1:731351694960:android:58d9124d0eb80e10fbfeb5",
         "android_client_info": {
           "package_name": "com.example.androiddoan"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1089683519980-3tc3cfkbe6lj97s537r7camp0010bskk.apps.googleusercontent.com",
+          "client_id": "731351694960-d4v747je8u7tcehie13e550ornquvjid.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.androiddoan",
-            "certificate_hash": "e40bb2e5f65cb969077dd7ec620894a299bba2a1"
+            "certificate_hash": "26b201f8215c744a7b40debd3bfd1e00f57be768"
           }
         },
         {
-          "client_id": "1089683519980-qakmc79eu0p3vsu28p3p90m56cob4lnf.apps.googleusercontent.com",
+          "client_id": "731351694960-po5tgupqtf8gmb2vs4cb88st8fre1urs.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCpvezt3nBDH5eUNzxge48VKKbXH0A5lpg"
+          "current_key": "AIzaSyCUOoEv2nXZZnk1qFFNQhy6tFsWMcacIAA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1089683519980-qakmc79eu0p3vsu28p3p90m56cob4lnf.apps.googleusercontent.com",
+              "client_id": "731351694960-po5tgupqtf8gmb2vs4cb88st8fre1urs.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

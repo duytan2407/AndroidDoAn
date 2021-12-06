@@ -72,7 +72,7 @@ public class ShopFragment extends Fragment implements ShopListAdapter.ShopInterf
                     .show();
 
         }else{
-            Snackbar.make(requireView(), "Sản phẩm đã đạt giới hạn số lượng sản phẩm", Snackbar.LENGTH_LONG)
+            Snackbar.make(requireView(), "Sản phẩm đã đạt số lượng tối đa!!!", Snackbar.LENGTH_LONG)
                     .show();
         }
     }

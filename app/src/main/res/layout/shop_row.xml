@@ -55,7 +55,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:textColor="@color/black"
-                    android:text="@{product.gia}" />
+                    android:text="@{`$`+ String.valueOf(product.gia)}" />
 
                 <Button
                     android:id="@+id/addToCartButton"

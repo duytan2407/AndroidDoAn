@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/mycolor"
+    android:background="@android:color/holo_orange_light"
     android:orientation="horizontal">
 
     <LinearLayout
@@ -42,7 +42,7 @@
             android:layout_weight="1"
             android:textColor="@color/white"
             android:layout_marginLeft="10dp"
-            android:text="40,000đ" />
+            android:text="40,000" />
 
     </LinearLayout>
 </LinearLayout>

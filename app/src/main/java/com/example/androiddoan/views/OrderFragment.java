@@ -41,7 +41,7 @@ public class OrderFragment extends Fragment {
         fragmentOrderBinding.continueShoppingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                shopViewModel.resetCart();
+//                shopViewModel.resetCart();
                 navController.navigate(R.id.action_orderFragment_to_shopFragment);
             }
         });

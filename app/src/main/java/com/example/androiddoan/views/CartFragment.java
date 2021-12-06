@@ -60,7 +60,7 @@ public class CartFragment extends Fragment implements CartListAdapter.CartInterf
         fragmentCartBinding.placeOrderButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_cartFragment_to_orderFragment);
+                navController.navigate(R.id.action_cartFragment_to_paymentFragment);
             }
         });
     }
@@ -69,5 +69,10 @@ public class CartFragment extends Fragment implements CartListAdapter.CartInterf
     public void deleteItem(CartItem cartItem) {
 //        Log.d(TAG, "deleteItem: " + cartItem.getProduct().getTenMonAn());
         shopViewModel.removeItemFromCart(cartItem);
+    }
+
+    @Override
+    public void changeQuantity(CartItem cartItem, int quantity) {
+        shopViewModel.changeQuantity(cartItem, quantity);
     }
 }

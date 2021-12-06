@@ -2,6 +2,9 @@ package com.example.androiddoan.repositories;
 
 import static com.example.androiddoan.RetrofitClient.getRetrofit;
 
+import android.util.Log;
+import android.widget.Toast;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
@@ -36,7 +39,7 @@ public class ShopRepo {
 
             @Override
             public void onFailure(Call<List<Product>> call, Throwable t) {
-
+                Log.d("Error", t.toString());
             }
         });
     }

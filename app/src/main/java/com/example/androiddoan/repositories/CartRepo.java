@@ -29,7 +29,7 @@ public class CartRepo {
         List<CartItem> cartItemList = new ArrayList<>(mutableCart.getValue());
         for(CartItem cartItem : cartItemList){
             if(cartItem.getProduct().getId().equals(product.getId())){
-                if(cartItem.getQuantity() == 3){
+                if(cartItem.getQuantity() == 5){
                     return false;
                 }
                 int index = cartItemList.indexOf(cartItem);
@@ -45,12 +45,21 @@ public class CartRepo {
         mutableCart.setValue(cartItemList);
         return true;
     }
+
     public void removeItemFromCart(CartItem cartItem){
         if(mutableCart.getValue() == null){
             return;
         }
         List<CartItem> cartItemList = new ArrayList<>(mutableCart.getValue());
         cartItemList.remove(cartItem);
+        mutableCart.setValue(cartItemList);
+    }
+
+    public void changeQuantity(CartItem cartItem, int quantity){
+        if(mutableCart.getValue() == null) return;
+        List<CartItem> cartItemList = new ArrayList<>(mutableCart.getValue());
+        CartItem updateItem = new CartItem(cartItem.getProduct(), quantity);
+        cartItemList.set(cartItemList.indexOf(cartItem), updateItem);
         mutableCart.setValue(cartItemList);
     }
 }
