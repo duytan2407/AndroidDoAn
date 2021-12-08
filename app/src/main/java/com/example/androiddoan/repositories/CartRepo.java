@@ -12,6 +12,8 @@ import java.util.List;
 public class CartRepo {
 
     private MutableLiveData<List<CartItem>> mutableCart = new MutableLiveData<>();
+    private MutableLiveData<Integer> mutableTotalPrice = new MutableLiveData<>();
+
     public LiveData<List<CartItem>> getCart(){
         if(mutableCart.getValue() == null){
             initCart();
@@ -21,6 +23,7 @@ public class CartRepo {
 
     public void initCart() {
         mutableCart.setValue(new ArrayList<CartItem>());
+        caculateCartTotal();
     }
     public boolean addItemToCart(Product product){
         if(mutableCart.getValue() == null){
@@ -36,6 +39,7 @@ public class CartRepo {
                 cartItem.setQuantity(cartItem.getQuantity() + 1);
                 cartItemList.set(index, cartItem);
                 mutableCart.setValue(cartItemList);
+                caculateCartTotal();
                 return true;
             }
         }
@@ -43,6 +47,7 @@ public class CartRepo {
         CartItem cartItem = new CartItem(product, 1);
         cartItemList.add(cartItem);
         mutableCart.setValue(cartItemList);
+        caculateCartTotal();
         return true;
     }
 
@@ -53,6 +58,7 @@ public class CartRepo {
         List<CartItem> cartItemList = new ArrayList<>(mutableCart.getValue());
         cartItemList.remove(cartItem);
         mutableCart.setValue(cartItemList);
+        caculateCartTotal();
     }
 
     public void changeQuantity(CartItem cartItem, int quantity){
@@ -61,5 +67,23 @@ public class CartRepo {
         CartItem updateItem = new CartItem(cartItem.getProduct(), quantity);
         cartItemList.set(cartItemList.indexOf(cartItem), updateItem);
         mutableCart.setValue(cartItemList);
+        caculateCartTotal();
+    }
+
+    private void caculateCartTotal(){
+        if(mutableCart.getValue() == null) return;
+        Integer total = 0;
+        List<CartItem> cartItemList = mutableCart.getValue();
+        for(CartItem cartItem: cartItemList){
+            total += cartItem.getProduct().getGia() * cartItem.getQuantity();
+        }
+        mutableTotalPrice.setValue(total);
+    }
+
+    public LiveData<Integer> getTotalPrice(){
+        if(mutableTotalPrice.getValue() == null){
+            mutableTotalPrice.setValue(0);
+        }
+        return mutableTotalPrice;
     }
 }

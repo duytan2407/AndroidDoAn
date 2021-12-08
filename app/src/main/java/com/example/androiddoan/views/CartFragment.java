@@ -57,6 +57,13 @@ public class CartFragment extends Fragment implements CartListAdapter.CartInterf
                 fragmentCartBinding.placeOrderButton.setEnabled(cartItems.size() > 0);
             }
         });
+        shopViewModel.getTotalPrice().observe(getViewLifecycleOwner(), new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer integer) {
+                fragmentCartBinding.orderTotalTextView.setText(integer.toString());
+            }
+        });
+
         fragmentCartBinding.placeOrderButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

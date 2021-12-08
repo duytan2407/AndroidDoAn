@@ -97,6 +97,13 @@ public class PaymentFragment extends Fragment implements CartListAdapter.CartInt
             }
         });
 
+        shopViewModel.getTotalPrice().observe(getViewLifecycleOwner(), new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer integer) {
+                fragmentPaymentBinding.paymentTotalTextView.setText(integer.toString());
+            }
+        });
+
         RadioButton rb1 = (RadioButton) getView().findViewById(R.id.radioButton);
         RadioButton rb2 = (RadioButton) getView().findViewById(R.id.radioButton2);
         paymentTotalTextView=(TextView) getView().findViewById(R.id.paymentTotalTextView);
@@ -111,7 +118,8 @@ public class PaymentFragment extends Fragment implements CartListAdapter.CartInt
                 } else if (rb2.isChecked()) {
                     new getToken().execute();
                     submitPayment();
-                }
+                } else if(!rb1.isChecked() && !rb2.isChecked())
+                    Toast.makeText(getActivity(), "Vui lòng chọn phương thức thanh toán", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -124,7 +132,7 @@ public class PaymentFragment extends Fragment implements CartListAdapter.CartInt
             startActivityForResult(dropInRequest.getIntent(getActivity()),REQUEST_CODE);
         }
         else
-            Toast.makeText(getActivity(), "Enter a valid amount for payment", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Nhập số tiền hợp lệ", Toast.LENGTH_SHORT).show();
 
     }
 
@@ -136,11 +144,11 @@ public class PaymentFragment extends Fragment implements CartListAdapter.CartInt
                     public void onResponse(String response) {
                         if(response.toString().contains("Successful")){
                             shopViewModel.resetCart();
-                            Toast.makeText(getActivity(), "Payment Success", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "Thanh toán thành công", Toast.LENGTH_SHORT).show();
                             navController.navigate(R.id.action_paymentFragment_to_orderFragment);
                         }
                         else {
-                            Toast.makeText(getActivity(), "Payment Failed", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "Thanh toán thất bại", Toast.LENGTH_SHORT).show();
                         }
                         Log.d("Response",response);
                     }
@@ -200,7 +208,7 @@ public class PaymentFragment extends Fragment implements CartListAdapter.CartInt
             super.onPreExecute();
             mDailog=new ProgressDialog(getActivity(),android.R.style.Theme_DeviceDefault_Light_Dialog);
             mDailog.setCancelable(false);
-            mDailog.setMessage("Please Wait...");
+            mDailog.setMessage("Xin vui lòng chờ...");
             mDailog.show();
         }
 
@@ -225,10 +233,10 @@ public class PaymentFragment extends Fragment implements CartListAdapter.CartInt
 
                     sendPayments();
                 } else {
-                    Toast.makeText(getActivity(), "Please enter a valid amount", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Nhập số tiền hợp lệ", Toast.LENGTH_SHORT).show();
                 }
             } else if (resultCode == RESULT_CANCELED) {
-                Toast.makeText(getActivity(), "Canceled", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Đã hủy", Toast.LENGTH_SHORT).show();
             } else {
                 Exception error = (Exception) data.getSerializableExtra(DropInActivity.EXTRA_ERROR);
                 Log.d("Error", error.toString());

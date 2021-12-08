@@ -16,15 +16,15 @@
 
         <ImageView
             android:id="@+id/productImageView"
-            android:layout_width="96dp"
-            android:layout_height="96dp"
-            android:padding="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:padding="5dp"
+            android:scaleType="centerCrop"
+            android:layout_marginLeft="5dp"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:productImage="@{cartItem.product.hinhAnh}"
-            />
-
+            android:productImage="@{cartItem.product.hinhAnh}" />
 
         <TextView
             android:id="@+id/productNameTextView"

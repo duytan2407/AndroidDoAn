@@ -16,6 +16,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         android:background="?attr/selectableItemBackground"
         android:onClick="@{() -> shopInterface.onItemClick(product)}">
 
@@ -30,6 +32,7 @@
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
+                android:layout_marginLeft="5dp"
                 android:productImage="@{product.hinhAnh}"
                 tools:srcCompat="@tools:sample/avatars"
                 />
@@ -43,19 +46,22 @@
                     android:id="@+id/productNameTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/bungee"
                     android:layout_marginLeft="15dp"
-                    android:text="@{product.tenMonAn}" />
+                    android:layout_marginBottom="0dp"
+                    android:fontFamily="@font/bungee"
+                    android:text="@{product.tenMonAn}"
+                    android:textColor="@color/black"
+                    android:textSize="18dp" />
 
                 <TextView
                     android:id="@+id/productPriceTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
+                    android:layout_marginTop="0dp"
+                    android:text="@{`$`+ String.valueOf(product.gia)}"
                     android:textColor="@color/black"
-                    android:text="@{`$`+ String.valueOf(product.gia)}" />
+                    android:textSize="15dp" />
 
                 <Button
                     android:id="@+id/addToCartButton"
@@ -65,7 +71,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:onClick="@{() -> shopInterface.addItem(product)}"
-                    android:text="Quấtt" />
+                    android:text="+ Quấtt" />
             </LinearLayout>
 
         </LinearLayout>
