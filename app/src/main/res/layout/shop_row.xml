@@ -70,6 +70,7 @@
                     android:layout_marginLeft="15dp"
                     android:layout_weight="1"
                     android:gravity="center"
+                    android:fontFamily="@font/bungee"
                     android:onClick="@{() -> shopInterface.addItem(product)}"
                     android:text="+ Quấtt" />
             </LinearLayout>
